@@ -20,6 +20,7 @@ class Cell:
         # Append the object to the Cell.all list
         Cell.all.append(self)
 
+#Creating the button
     def create_btn_object(self, location):
         btn = Button(
             location,
@@ -42,6 +43,7 @@ class Cell:
         )
         Cell.cell_count_label_object = lbl
 
+#Mouse left click action
     def left_click_actions(self, event):
         if self.is_mine:
             self.show_mine()
@@ -84,6 +86,7 @@ class Cell:
         cells = [cell for cell in cells if cell is not None]
         return cells
 
+#Mine count for the surrounding Cells
     @property
     def surrounding_cells_mines_distance(self):
         counter = 0
@@ -116,7 +119,7 @@ class Cell:
         sys.exit()
 
 
-
+#Mouse right click actions
     def right_click_actions(self, event):
         if not self.is_mine_candidate:
             self.cell_btn_object.configure(
